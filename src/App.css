@@ -1,0 +1,21 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=League+Gothic&family=Outfit:wght@100;200;300;400;500&display=swap");
+.App {
+  font-family: "Inter", sans-serif;
+}
+
+.light {
+  background-color: #dedede;
+  color: #0a192f;
+}
+
+.dark {
+  background-color: #0a192f;
+  color: #dedede;
+}
+
+/* body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+} */

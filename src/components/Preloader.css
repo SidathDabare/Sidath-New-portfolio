@@ -1,0 +1,138 @@
+/** @format */
+
+.preloader-main-div {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #011629;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBig 0.5s ease forwards;
+  animation-delay: 4.1s;
+}
+@keyframes fadeInBig {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    background-color: aliceblue;
+    opacity: 1;
+  }
+  100% {
+    background-color: aliceblue;
+    opacity: 0;
+  }
+}
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #091934;
+  display: flex;
+  /* animation: rotate 2s ease forwards; */
+}
+.left-wrapper {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  opacity: 0;
+  animation: moveLeft 2s ease forwards;
+  animation-delay: 2s;
+}
+.right-wrapper {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  opacity: 0;
+  animation: moveRight 2s ease forwards;
+  animation-delay: 2s;
+}
+@keyframes moveLeft {
+  0% {
+    opacity: 1;
+    background-color: #ffffff;
+  }
+  10% {
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    left: -50%;
+    opacity: 1;
+  }
+}
+@keyframes moveRight {
+  0% {
+    opacity: 1;
+    background-color: #ffffff;
+  }
+  10% {
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    left: 50%;
+    opacity: 1;
+  }
+}
+.preloader-logo-div {
+  width: 100%;
+  height: 100vh;
+  /* background-color: rgb(1, 16, 30); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.polygone {
+  stroke-dasharray: 0 1000;
+  stroke-linecap: round;
+  opacity: 0;
+  /* stroke-dashoffset: 0; */
+  /* transition: stroke-dashoffset 1s ease; */
+  animation: draw 4s ease forwards;
+  animation-delay: 1s;
+}
+.text {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes draw {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 0 1000;
+  }
+  20% {
+    opacity: 1;
+  }
+  98% {
+    box-shadow: 0px 0px 50px 50px #18a9ff;
+  }
+  100% {
+    opacity: 1;
+    stroke-dasharray: 1100 1100;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
