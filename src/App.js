@@ -1,17 +1,21 @@
 /** @format */
 
-import { createContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "./App.css"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import MyNavbar from "./components/MyNavbar"
 import Preloader from "./components/Preloader"
+import Work from "./pages/Work"
+import { useSelector } from "react-redux"
 
-export const ThemeContext = createContext(null)
+// export const ThemeContext = createContext(null)
 
 function App() {
-  const [theme, setTheme] = useState(false)
+  const themeColor = useSelector((state) => state.setColor.selectedColor)
+
+  // const [theme, setTheme] = useState(false)
   const [loader, setLoader] = useState(true)
 
   useEffect(() => {
@@ -24,20 +28,16 @@ function App() {
       {loader ? (
         <Preloader />
       ) : (
-        <ThemeContext.Provider value={{ theme }}>
-          <div className={theme ? "App light" : "App dark"}>
-            <BrowserRouter>
-              <MyNavbar theme={theme} setTheme={setTheme} />
-              <Routes>
-                <Route
-                  path='/'
-                  element={<Home theme={theme} setTheme={setTheme} />}
-                />
-                <Route path='/profile' element={<Profile />} />
-              </Routes>
-            </BrowserRouter>
-          </div>
-        </ThemeContext.Provider>
+        <div className={themeColor ? "App light" : "App dark"}>
+          <BrowserRouter>
+            <MyNavbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/work' element={<Work />} />
+              <Route path='/profile' element={<Profile />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       )}
     </>
   )

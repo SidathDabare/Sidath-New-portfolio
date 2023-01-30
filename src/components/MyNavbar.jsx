@@ -4,42 +4,76 @@ import React, { useEffect, useState } from "react"
 import { Container } from "react-bootstrap"
 import "../components/MyNavbar.css"
 import LOGO from "../Images/logo.png"
+import LOGODARK from "../Images/logo-dark.png"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import LightModeIcon from "@mui/icons-material/LightMode"
-import LinkedInIcon from "@mui/icons-material/LinkedIn"
-import GitHubIcon from "@mui/icons-material/GitHub"
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone"
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail"
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward"
+import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { setColor } from "../redux/action"
 
 const MyNavbar = (props) => {
-  console.log(props)
+  const themeColor = useSelector((state) => state.setColor.selectedColor)
 
-  const [navColor, setNavColor] = useState(false)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const [theme, setTheme] = useState(false)
+  // const [navColor, setNavColor] = useState(false)
   const [toggleBtn, setToggleBtn] = useState(false)
 
-  const changeNavBg = () => {
-    // console.log(window.scrollY)
-    // if (window.scrollY >= 60) {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth",
-    // })
-    if (window.pageYOffset > 100) {
-      setNavColor(true)
-    } else {
-      setNavColor(false)
-    }
+  // const changeNavBg = () => {
+  //   if (window.pageYOffset > 100) {
+  //     setNavColor(true)
+  //   } else {
+  //     setNavColor(false)
+  //   }
+  // }
+  const setColorTheme = () => {
+    dispatch(setColor(theme))
   }
   useEffect(() => {
-    window.addEventListener("scroll", changeNavBg)
-    return () => window.removeEventListener("scroll", changeNavBg)
+    // window.addEventListener("scroll", changeNavBg)
+    // return () => window.removeEventListener("scroll", changeNavBg)
   }, [])
 
   return (
-    <div className={navColor ? "navbar-main-active" : "navbar-main"}>
+    // <div className={navColor ? "navbar-main-active" : "navbar-main"}>
+    <div className='navbar-main'>
       <Container className='navbar-div'>
         <div className='logo-div'>
-          <img className='logo' alt='logo' src={LOGO} />
+          {!themeColor ? (
+            <img className='logo' alt='logo' src={LOGODARK} />
+          ) : (
+            <img className='logo' alt='logo' src={LOGO} />
+          )}
+        </div>
+        <div className='action-div'>
+          {!themeColor ? (
+            <div className='switch-colors light'>
+              {/* <small>DARK MOOD</small> */}
+              <DarkModeIcon
+                className='d-inline-flex align-items-center icon-size mx-2'
+                onClick={() => {
+                  setTheme(!theme)
+                  setColorTheme()
+                  // setToggleBtn(false)
+                }}
+              />
+            </div>
+          ) : (
+            <div className='switch-colors dark'>
+              {/* <small>LIGHT MOOD</small> */}
+              <LightModeIcon
+                className='d-inline-flex align-items-center icon-size mx-2'
+                onClick={() => {
+                  setTheme(!theme)
+                  setColorTheme()
+                  // setToggleBtn(false)
+                }}
+              />
+            </div>
+          )}
         </div>
         <div
           className={
@@ -48,70 +82,134 @@ const MyNavbar = (props) => {
               : "toggle-btn"
           }
           onClick={() => setToggleBtn(!toggleBtn)}>
-          <div
-            className={
-              toggleBtn ? "line01 remove-margin bg-hover" : "line01"
-            }></div>
-          <div
-            className={
-              toggleBtn ? "line02 line02-animation bg-hover" : "line02"
-            }></div>
-          <div
-            className={
-              toggleBtn
-                ? "line03 remove-margin line03-animation bg-hover"
-                : "line03"
-            }></div>
+          {!themeColor ? (
+            <>
+              {" "}
+              <div
+                className={
+                  toggleBtn
+                    ? "line01 remove-margin bg-hover dark"
+                    : "line01 dark "
+                }></div>
+              <div
+                className={
+                  toggleBtn
+                    ? "line02 line02-animation bg-hover dark"
+                    : "line02 dark"
+                }></div>
+              <div
+                className={
+                  toggleBtn
+                    ? "line03 remove-margin line03-animation bg-hover dark"
+                    : "line03 dark"
+                }></div>
+            </>
+          ) : (
+            <>
+              {" "}
+              <div
+                className={
+                  toggleBtn
+                    ? "line01 remove-margin bg-hover light"
+                    : "line01 light"
+                }></div>
+              <div
+                className={
+                  toggleBtn
+                    ? "line02 line02-animation bg-hover light"
+                    : "line02 light"
+                }></div>
+              <div
+                className={
+                  toggleBtn
+                    ? "line03 remove-margin line03-animation bg-hover light"
+                    : "line03 light"
+                }></div>
+            </>
+          )}
         </div>
       </Container>
       <div className={toggleBtn ? "menu-div" : "menu-div-hide"}>
         <Container
           className={
-            !props.theme
+            props.theme
               ? "dark menu-div-container "
               : "light menu-div-container "
           }>
-          <div className='action-div'>
-            {props.theme ? (
-              <div className='switch-colors'>
-                <small>DARK MOOD</small>
-                <DarkModeIcon
-                  className='d-inline-flex align-items-center icon-size mx-2'
-                  onClick={() => {
-                    props.setTheme(!props.theme)
-                    setToggleBtn(false)
-                  }}
-                />
-              </div>
-            ) : (
-              <div className='switch-colors'>
-                <small>LIGHT MOOD</small>
-                <LightModeIcon
-                  className='d-inline-flex align-items-center icon-size mx-2'
-                  onClick={() => {
-                    props.setTheme(!props.theme)
-                    setToggleBtn(false)
-                  }}
-                />
-              </div>
-            )}
-          </div>
           <div className='menu-content-div'>
             <div className='menu-div-content'>
-              <li className={toggleBtn ? "nav-menu-links" : ""}>
-                HOME<span className='small-line'></span>
+              <li
+                className={toggleBtn ? "nav-menu-links" : ""}
+                onClick={() => {
+                  navigate("/")
+                  setToggleBtn(false)
+                }}>
+                HOME
+                <span
+                  className={
+                    !themeColor ? "small-line dark" : " small-line light"
+                  }></span>
               </li>
-              <li className={toggleBtn ? "nav-menu-links" : ""}>
-                PROJECTS<span className='small-line'></span>
+              <li
+                className={toggleBtn ? "nav-menu-links" : ""}
+                onClick={() => {
+                  navigate("/work")
+                  setToggleBtn(false)
+                }}>
+                WORK
+                <span
+                  className={
+                    !themeColor ? "small-line dark" : " small-line light"
+                  }></span>
               </li>
-              <li className={toggleBtn ? "nav-menu-links" : ""}>
-                ABOUT<span className='small-line'></span>
+              <li
+                className={toggleBtn ? "nav-menu-links" : ""}
+                onClick={() => {
+                  navigate("/about")
+                  setToggleBtn(false)
+                }}>
+                ABOUT
+                <span
+                  className={
+                    !themeColor ? "small-line dark" : " small-line light"
+                  }></span>
               </li>
-              <li className={toggleBtn ? "nav-menu-links" : ""}>
-                CONTACT<span className='small-line'></span>
+              <li
+                className={toggleBtn ? "nav-menu-links" : ""}
+                onClick={() => {
+                  navigate("/contact")
+                  setToggleBtn(false)
+                }}>
+                CONTACT
+                <span
+                  className={
+                    !themeColor ? "small-line dark" : " small-line light"
+                  }></span>
               </li>
             </div>
-            <div className={toggleBtn ? "menu-div-content-info" : ""}>
+            <div className={toggleBtn ? "menu-div-content-social-links" : ""}>
+              <div className='d-flex align-item-center'>
+                <ArrowOutwardIcon className='icon-size-big mr-3 ' />
+                <small className=''> Sidath Dabare</small>
+                <span
+                  className={
+                    !props.theme
+                      ? "bottom-line-div dark"
+                      : "bottom-line-div light"
+                  }></span>
+              </div>
+              <div className='d-flex align-item-center'>
+                <ArrowOutwardIcon className='icon-size-big mr-3 ' />
+                <small className=''> Sidath Dabare</small>
+                <span
+                  className={
+                    !props.theme
+                      ? "bottom-line-div dark"
+                      : "bottom-line-div light"
+                  }></span>
+              </div>
+            </div>
+            {/* <div className={toggleBtn ? "menu-div-content-info" : ""}>
               <div>
                 <h4 className='mb-2'>Sidath Dabare</h4>
                 <small className='mb-0'>Full stack developer</small>
@@ -136,7 +234,7 @@ const MyNavbar = (props) => {
                   <span>sidath2007@gmail.com</span>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </Container>
       </div>
