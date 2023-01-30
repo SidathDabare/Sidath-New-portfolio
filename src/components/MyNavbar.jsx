@@ -193,7 +193,7 @@ const MyNavbar = (props) => {
                 <small className=''> Sidath Dabare</small>
                 <span
                   className={
-                    !props.theme
+                    !themeColor
                       ? "bottom-line-div dark"
                       : "bottom-line-div light"
                   }></span>
@@ -203,7 +203,7 @@ const MyNavbar = (props) => {
                 <small className=''> Sidath Dabare</small>
                 <span
                   className={
-                    !props.theme
+                    !themeColor
                       ? "bottom-line-div dark"
                       : "bottom-line-div light"
                   }></span>

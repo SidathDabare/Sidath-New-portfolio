@@ -9,6 +9,8 @@ import MyNavbar from "./components/MyNavbar"
 import Preloader from "./components/Preloader"
 import Work from "./pages/Work"
 import { useSelector } from "react-redux"
+import WorkDisplay from "./pages/WorkDisplay"
+import Contact from "./pages/Contact"
 
 // export const ThemeContext = createContext(null)
 
@@ -34,7 +36,9 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/work' element={<Work />} />
+              <Route path='/works/:name' element={<WorkDisplay />} />
               <Route path='/profile' element={<Profile />} />
+              <Route path='/contact' element={<Contact />} />
             </Routes>
           </BrowserRouter>
         </div>
