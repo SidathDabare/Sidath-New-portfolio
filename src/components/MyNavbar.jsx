@@ -132,7 +132,7 @@ const MyNavbar = (props) => {
       <div className={toggleBtn ? "menu-div" : "menu-div-hide"}>
         <Container
           className={
-            props.theme
+            themeColor
               ? "dark menu-div-container "
               : "light menu-div-container "
           }>

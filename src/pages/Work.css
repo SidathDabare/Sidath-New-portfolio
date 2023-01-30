@@ -46,12 +46,13 @@ div.work-items-list::-webkit-scrollbar-thumb {
 }
 .work-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   padding: 10px 0;
 }
 
-.work-item span:nth-child(1) {
+.work-item div span:nth-child(1) {
   font-size: 20px !important;
   margin-right: 10px;
 }
@@ -61,7 +62,7 @@ div.work-items-list::-webkit-scrollbar-thumb {
   transition: 0.5s ease-in-out;
 }
 .work-item:hover .line-center {
-  width: 55px;
+  width: 55px !important;
 }
 .work-image-div {
   display: flex;

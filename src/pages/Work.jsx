@@ -35,11 +35,16 @@ const Work = (props) => {
                   onMouseOver={() => {
                     dispatch(selectedProject(item))
                   }}>
-                  <span>{item.title}</span>
-                  <span
-                    className={
-                      !themeColor ? "line-center dark " : "line-center light"
-                    }></span>
+                  <div className='d-flex align-items-center'>
+                    <span>{item.title}</span>
+                    <span
+                      className={
+                        !themeColor ? "line-center dark " : "line-center light"
+                      }></span>
+                  </div>
+                  <div>
+                    <span>{item.technology}</span>
+                  </div>
                 </div>
               ))}
           </div>
