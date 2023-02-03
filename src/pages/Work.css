@@ -141,7 +141,7 @@ body:has(#work-item:hover) #work-image-animation {
   bottom: -20px;
   transition: 0.5s ease-in-out;
 }
-body:has(#work-item:hover) #work-image-div-overlay-content {
+body:has(.work-item-title:hover) #work-image-div-overlay-content {
   opacity: 1;
   bottom: 10px;
 }

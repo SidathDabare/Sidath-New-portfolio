@@ -11,6 +11,8 @@ import Work from "./pages/Work"
 import { useSelector } from "react-redux"
 import WorkDisplay from "./pages/WorkDisplay"
 import Contact from "./pages/Contact"
+import About from "./pages/About"
+import CustomCursor from "./components/CustomCursor"
 
 // export const ThemeContext = createContext(null)
 
@@ -32,10 +34,12 @@ function App() {
       ) : (
         <div className={themeColor ? "App light" : "App dark"}>
           <BrowserRouter>
+            <CustomCursor />
             <MyNavbar />
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/work' element={<Work />} />
+              <Route path='/about' element={<About />} />
               <Route path='/works/:name' element={<WorkDisplay />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/contact' element={<Contact />} />

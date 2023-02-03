@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #011629;
+  background-color: #2a2d34;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #091934;
+  background-color: #2a2d34;
   display: flex;
   /* animation: rotate 2s ease forwards; */
 }

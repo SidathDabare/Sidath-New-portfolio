@@ -7,7 +7,8 @@ import LOGO from "../Images/logo.png"
 import LOGODARK from "../Images/logo-dark.png"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import LightModeIcon from "@mui/icons-material/LightMode"
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward"
+import GitHubIcon from "@mui/icons-material/GitHub"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setColor } from "../redux/action"
@@ -41,7 +42,7 @@ const MyNavbar = (props) => {
     // <div className={navColor ? "navbar-main-active" : "navbar-main"}>
     <div className='navbar-main'>
       <Container className='navbar-div'>
-        <div className='logo-div'>
+        <div className='logo-div' onClick={() => navigate("/")}>
           {!themeColor ? (
             <img className='logo' alt='logo' src={LOGODARK} />
           ) : (
@@ -130,16 +131,16 @@ const MyNavbar = (props) => {
         </div>
       </Container>
       <div className={toggleBtn ? "menu-div" : "menu-div-hide"}>
-        <Container
+        <div
           className={
-            themeColor
-              ? "dark menu-div-container "
-              : "light menu-div-container "
+            themeColor ? "dark menu-div-container" : "light menu-div-container"
           }>
-          <div className='menu-content-div'>
+          <Container className='menu-content-div'>
             <div className='menu-div-content'>
               <li
-                className={toggleBtn ? "nav-menu-links" : ""}
+                className={
+                  toggleBtn ? "nav-menu-links" : "nav-menu-links-reverse"
+                }
                 onClick={() => {
                   navigate("/")
                   setToggleBtn(false)
@@ -151,7 +152,9 @@ const MyNavbar = (props) => {
                   }></span>
               </li>
               <li
-                className={toggleBtn ? "nav-menu-links" : ""}
+                className={
+                  toggleBtn ? "nav-menu-links" : "nav-menu-links-reverse"
+                }
                 onClick={() => {
                   navigate("/work")
                   setToggleBtn(false)
@@ -163,7 +166,9 @@ const MyNavbar = (props) => {
                   }></span>
               </li>
               <li
-                className={toggleBtn ? "nav-menu-links" : ""}
+                className={
+                  toggleBtn ? "nav-menu-links" : "nav-menu-links-reverse"
+                }
                 onClick={() => {
                   navigate("/about")
                   setToggleBtn(false)
@@ -175,7 +180,9 @@ const MyNavbar = (props) => {
                   }></span>
               </li>
               <li
-                className={toggleBtn ? "nav-menu-links" : ""}
+                className={
+                  toggleBtn ? "nav-menu-links" : "nav-menu-links-reverse"
+                }
                 onClick={() => {
                   navigate("/contact")
                   setToggleBtn(false)
@@ -187,10 +194,20 @@ const MyNavbar = (props) => {
                   }></span>
               </li>
             </div>
-            <div className={toggleBtn ? "menu-div-content-social-links" : ""}>
-              <div className='d-flex align-item-center'>
-                <ArrowOutwardIcon className='icon-size-big mr-3 ' />
-                <small className=''> Sidath Dabare</small>
+            <div
+              className={
+                toggleBtn
+                  ? "menu-div-content-social-links"
+                  : "nav-menu-links-reverse"
+              }>
+              <div
+                className='d-flex align-item-center'
+                onClick={() => {
+                  window.open("https://github.com/SidathDabare", "_blank")
+                  setToggleBtn(false)
+                }}>
+                <GitHubIcon className='icon-size-big mr-3 ' />
+                <small className=''> Git Hub</small>
                 <span
                   className={
                     !themeColor
@@ -198,9 +215,17 @@ const MyNavbar = (props) => {
                       : "bottom-line-div light"
                   }></span>
               </div>
-              <div className='d-flex align-item-center'>
-                <ArrowOutwardIcon className='icon-size-big mr-3 ' />
-                <small className=''> Sidath Dabare</small>
+              <div
+                className='d-flex align-item-center'
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/in/sidath-dabare-591063b8/",
+                    "_blank"
+                  )
+                  setToggleBtn(false)
+                }}>
+                <LinkedInIcon className='icon-size-big mr-3 ' />
+                <small className=''> LinkedIn</small>
                 <span
                   className={
                     !themeColor
@@ -235,8 +260,8 @@ const MyNavbar = (props) => {
                 </p>
               </div>
             </div> */}
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
     </div>
   )

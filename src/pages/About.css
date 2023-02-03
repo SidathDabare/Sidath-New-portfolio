@@ -1,0 +1,140 @@
+/** @format */
+
+.about-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-content-div {
+  width: 80%;
+  height: 60vh;
+  display: flex;
+}
+.about-content-left {
+  width: 30%;
+  height: 100%;
+
+  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-pic {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  opacity: 0;
+}
+.about-content-right {
+  width: 70%;
+  height: 100%;
+}
+.about-top-div {
+  width: 100%;
+  height: 35%;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 0 20px;
+}
+.about-top-bottom {
+  width: 100%;
+  height: 50%;
+  padding: 0 20px 0 20px;
+}
+.about-section01 {
+  width: 100%;
+  height: 70%;
+}
+.about-section02 {
+  width: 100%;
+  height: 30%;
+}
+.about-section02 a {
+  text-decoration: none;
+}
+
+.resume {
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+}
+.bottom-line {
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  top: 25px;
+  transition: 0.5s ease-in-out;
+}
+.resume:hover > .bottom-line {
+  width: 102%;
+  height: 2px;
+}
+
+.text-animation {
+  animation: fadeInText 0.7s linear forwards;
+  transition: ease-in-out;
+}
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about-top-div {
+    height: 30%;
+  }
+  .about-top-bottom {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .about-div {
+    min-height: 100vh;
+    height: auto;
+  }
+  .about-content-div {
+    flex-direction: column;
+    height: auto;
+    margin-top: 120px;
+  }
+  .about-content-left {
+    width: 100%;
+    height: 30vh;
+  }
+  .about-content-right {
+    width: 100%;
+    height: auto;
+  }
+  .about-top-div {
+    margin-top: 20px;
+    height: auto;
+    padding: 0;
+  }
+  .about-top-bottom {
+    padding: 0;
+  }
+  .about-section01 p {
+    text-align: justify;
+  }
+}

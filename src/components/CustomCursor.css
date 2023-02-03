@@ -1,0 +1,84 @@
+/** @format */
+
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+}
+
+.main-cursor {
+  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  mix-blend-mode: difference;
+}
+
+.main-cursor .main-cursor-background {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
+.secondary-cursor {
+  width: 35px;
+  height: 35px;
+}
+
+.secondary-cursor .cursor-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(120, 111, 111);
+  position: relative;
+}
+
+.secondary-cursor .cursor-background:after,
+.secondary-cursor .cursor-background:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.secondary-cursor .cursor-background:before {
+  left: 10px;
+}
+
+.secondary-cursor .cursor-background:after {
+  right: 10px;
+}
+
+.slider-drag .cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+    bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.slider-drag .cursor-background:after {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+    translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.slider-drag .cursor-background:before {
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+    translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.slider-drag .main-cursor {
+  animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.hamburger .cursor-background {
+  animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.hamburger .main-cursor-background {
+  animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
