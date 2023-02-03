@@ -43,7 +43,8 @@ const Work = () => {
                     dispatch(selectedProject(item))
                   }}
                   onClick={() => {
-                    navigate(`/works/${selectedItem.title}`)
+                    navigate(`/`)
+                    //  navigate(`/works/${selectedItem.title}`)
                   }}>
                   <div className='d-flex align-items-center'>
                     <span>{i + 1}.</span>

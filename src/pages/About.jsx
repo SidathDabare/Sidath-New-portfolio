@@ -4,24 +4,20 @@ import React from "react"
 import { useSelector } from "react-redux"
 import MyPic from "../Images/my-pic.png"
 import "./About.css"
-import { useNavigate } from "react-router-dom"
+
+const RESUME_PDF = process.env.REACT_APP_CLIENT_URL
 
 const About = () => {
   const themeColor = useSelector((state) => state.setColor.selectedColor)
-  const navigate = useNavigate()
-  const onButtonClick = () => {
-    // using Java Script method to get PDF file
-    fetch("/public/resume.pdf").then((response) => {
-      response.blob().then((blob) => {
-        // Creating new object of PDF file
-        const fileURL = window.URL.createObjectURL(blob)
-        // Setting various property values
-        let alink = document.createElement("a")
-        alink.href = fileURL
-        alink.download = "resume.pdf"
-        alink.click()
-      })
-    })
+
+  const downloadFile = (url) => {
+    const fileName = url.split("/").pop()
+    const aTag = document.createElement("a")
+    aTag.href = url
+    aTag.setAttribute("download", fileName)
+    document.body.appendChild(aTag)
+    aTag.click()
+    aTag.remove()
   }
 
   return (
@@ -54,13 +50,9 @@ const About = () => {
                 </p>
               </div>
               <div className='about-section02'>
-                <a
-                  href='/src/Images/logo-bg.jpg'
-                  download
-                  // rel='noopener noreferrer'
-                  // target='_blank'
-                  // onClick={onButtonClick}
-                  className='resume text-animation animation-delay-200 pt-2'>
+                <p
+                  className='resume text-animation animation-delay-200 pt-2'
+                  onClick={() => downloadFile(RESUME_PDF)}>
                   <span>RESUME</span>
                   <span
                     className={
@@ -68,7 +60,7 @@ const About = () => {
                         ? "bottom-line dark mt-1"
                         : "bottom-line light mt-1"
                     }></span>
-                </a>
+                </p>
               </div>
             </div>
           </div>
