@@ -51,9 +51,9 @@ const About = () => {
               </div>
               <div className='about-section02'>
                 <p
-                  className='resume text-animation animation-delay-200 pt-2'
+                  className='resume text-animation animation-delay-200 pt-2 font-weight-bold'
                   onClick={() => downloadFile(RESUME_PDF)}>
-                  <span>RESUME</span>
+                  <span className='font-weight-bold'>RESUME</span>
                   <span
                     className={
                       !themeColor

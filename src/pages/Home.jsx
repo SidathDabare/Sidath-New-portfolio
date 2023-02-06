@@ -1,38 +1,40 @@
 /** @format */
 
 import React, { useState } from "react"
+
 import { useEffect } from "react"
+import "./Home.css"
 import { Container } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import Spline from "@splinetool/react-spline"
 import Spinner from "react-bootstrap/Spinner"
 import Typewriter from "typewriter-effect"
-import "./Home.css"
 
 const Home = (props) => {
   const themeColor = useSelector((state) => state.setColor.selectedColor)
   console.log(themeColor)
   const [loadingScean, setLoadingScean] = useState(false)
 
-  const loadScean = async () => {
-    try {
-      let response = await fetch(
-        `https://prod.spline.design/WD9OeVV3mdZrCo5F/scene.splinecode`
-      )
-      let data = await response
-      if (data.ok) {
-        setLoadingScean(true)
-      } else {
-        setLoadingScean(false)
-      }
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  // const loadScean = async () => {
+  //   try {
+  //     let response = await fetch(
+  //       `https://prod.spline.design/WD9OeVV3mdZrCo5F/scene.splinecode`
+  //     )
+  //     let data = await response
+  //     if (data.ok) {
+  //       setLoadingScean(true)
+  //     } else {
+  //       setLoadingScean(false)
+  //     }
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   useEffect(() => {
-    setLoadingScean(false)
-    loadScean()
+    setTimeout(() => {
+      setLoadingScean(true)
+    }, 1500)
   }, [props])
   return (
     <div className={themeColor ? "dark" : "light"}>
