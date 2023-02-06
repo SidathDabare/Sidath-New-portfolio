@@ -24,7 +24,10 @@ const Contact = () => {
               </div>
               <div>
                 <p className='mail-email'>
-                  <span> sidath2007@gmail.com</span>
+                  <a href='mailto:sidath2007@gmail.com'>
+                    {" "}
+                    sidath2007@gmail.com
+                  </a>
                   <span
                     className={
                       !themeColor ? "bottom-line dark" : "bottom-line light"

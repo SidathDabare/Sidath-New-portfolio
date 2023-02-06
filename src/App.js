@@ -13,6 +13,7 @@ import WorkDisplay from "./pages/WorkDisplay"
 import Contact from "./pages/Contact"
 import About from "./pages/About"
 import CustomCursor from "./components/CustomCursor"
+import Work1 from "./pages/Work1"
 
 // export const ThemeContext = createContext(null)
 
@@ -39,6 +40,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/work' element={<Work />} />
+              <Route path='/work1' element={<Work1 />} />
               <Route path='/about' element={<About />} />
               <Route path='/works/:name' element={<WorkDisplay />} />
               <Route path='/profile' element={<Profile />} />

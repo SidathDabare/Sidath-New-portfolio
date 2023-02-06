@@ -10,7 +10,7 @@
   /* background-color: #010e25; */
   /* box-shadow: 0px 10px 13px -7px #201c1c33, 0px 5px 24px -12px rgba(0, 0, 0, 0); */
   transition: 0.5s ease;
-  z-index: 1 !important;
+  z-index: 3 !important;
 }
 /* .navbar-main-active {
   position: sticky;
@@ -30,7 +30,7 @@
   justify-content: space-between;
   /* background-color: #010e25; */
   color: aliceblue;
-  z-index: 2 !important;
+  z-index: 999 !important;
 }
 .logo-div {
   display: flex;
@@ -306,6 +306,9 @@
   }
   .toggle-btn {
     margin-right: 10px;
+  }
+  .menu-content-div {
+    width: 90% !important;
   }
 }
 .small-line {

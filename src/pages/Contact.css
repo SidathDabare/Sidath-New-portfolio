@@ -25,7 +25,7 @@
 .contact-bottom-div {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: left;
   padding-top: 10px;
   height: 50%;
   width: 100%;
@@ -70,6 +70,11 @@
   width: fit-content;
   text-align: left !important;
   margin-right: 10px;
+  text-decoration: none;
+}
+.mail-email a {
+  text-decoration: none;
+  text-transform: none;
 }
 .social-link {
   position: relative;

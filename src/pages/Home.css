@@ -8,6 +8,7 @@
   width: 100%;
 } */
 .home-container {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -15,27 +16,100 @@
   align-items: center;
 }
 .home-container-left {
-  width: 40%;
+  position: absolute;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  z-index: 0;
 }
 .home-container-right {
-  width: 60%;
+  position: relative;
+  z-index: 0;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
+
 .section1-content p {
   font-size: 55px;
   font-family: "League Gothic", sans-serif;
   margin-bottom: 0;
 }
+.section1-content div {
+  font-size: 65px;
+  font-family: "League Gothic", sans-serif;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1150px) {
+  .home-container-right {
+    right: -20%;
+  }
+  /* .main-animation-spline {
+    max-height: 400px;
+    max-width: 400px;
+  } */
+  .add-bg-dark {
+    background: linear-gradient(
+      45deg,
+      rgb(35, 52, 56) 0%,
+      rgba(38, 48, 49, 0.723) 22%,
+      rgba(0, 165, 196, 0) 65%,
+      rgba(0, 212, 255, 0) 88%
+    );
+    z-index: 1;
+  }
+  .add-bg-light {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.7232142857142857) 28%,
+      rgba(0, 165, 196, 0) 74%,
+      rgba(0, 212, 255, 0) 100%
+    );
+    z-index: 1;
+  }
+  /* .main-animation-spline {
+    position: relative;
+    max-width: 400px;
+    height: 400px;
+    height: auto;
+    object-fit: cover;
+  } */
+}
 @media only screen and (max-width: 768px) {
   .section1-content p {
     font-size: 45px;
     text-align: center;
+  }
+  .section1-content div {
+    font-size: 45px;
+    text-align: center;
+  }
+  .home-container-right {
+    display: none;
+  }
+}
+.text-animation {
+  animation: fadeInText 0.7s linear forwards;
+  transition: ease-in-out;
+}
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
