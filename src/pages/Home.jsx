@@ -51,11 +51,7 @@ const Home = (props) => {
               <div>
                 <Typewriter
                   options={{
-                    strings: [
-                      "I'm front end developer",
-                      "I'm back end developer",
-                      "I'm full stack developer",
-                    ],
+                    strings: ["I'm full stack developer"],
                     autoStart: true,
                     loop: true,
                   }}
