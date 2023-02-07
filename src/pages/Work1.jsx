@@ -11,6 +11,10 @@ const Work1 = () => {
   return (
     <div className={themeColor ? "dark" : "light"}>
       <Container className='work1-page-container'>
+        <div className='temp-text'>
+          {" "}
+          <h3>Projects will available soon..Thanks</h3>
+        </div>
         <div className='work1-page-content'>
           {data.map((item, i) => (
             <div
