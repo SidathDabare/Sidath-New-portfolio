@@ -47,11 +47,15 @@ const Home = (props) => {
           }>
           <Container>
             <div className='section1-content text-animation animation-delay-100'>
-              <p>Hey! I am Sidath Dabare.</p>
+              {/* <p>Hey! I am Sidath Dabare.</p> */}
               <div>
                 <Typewriter
                   options={{
-                    strings: ["I'm full stack developer"],
+                    strings: [
+                      "Hey! I am Sidath Dabare.",
+                      "I'm a full stack developer",
+                      "I'm based in Padova/Italy",
+                    ],
                     autoStart: true,
                     loop: true,
                   }}
@@ -63,10 +67,10 @@ const Home = (props) => {
         <Container className='home-container-right'>
           {loadingScean ? (
             <div>
-              {/* <Spline
+              <Spline
                 className='main-animation-spline'
                 scene='https://prod.spline.design/WD9OeVV3mdZrCo5F/scene.splinecode'
-              /> */}
+              />
             </div>
           ) : (
             <div className='w-75 d-flex justify-content-center align-items-center'>

@@ -43,7 +43,7 @@
   margin-bottom: 0;
 }
 .section1-content div {
-  font-size: 65px;
+  font-size: 85px;
   font-family: "League Gothic", sans-serif;
   margin-bottom: 0;
 }
@@ -58,8 +58,8 @@
   .add-bg-dark {
     background: linear-gradient(
       45deg,
-      rgb(35, 52, 56) 0%,
-      rgba(38, 48, 49, 0.723) 22%,
+      rgb(20, 22, 22) 0%,
+      rgba(24, 28, 29, 0.723) 22%,
       rgba(0, 165, 196, 0) 65%,
       rgba(0, 212, 255, 0) 88%
     );
