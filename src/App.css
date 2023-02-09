@@ -7,11 +7,17 @@
 .light {
   background-color: #e4e4e4;
   color: #35363c;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
 }
 
 .dark {
   background-color: #2a2d34;
   color: #dedede;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
 }
 
 /* body {
