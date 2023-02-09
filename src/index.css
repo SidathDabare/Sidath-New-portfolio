@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   width: calc(100% - 6px);
   min-width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   overflow-y: auto !important;
 }
