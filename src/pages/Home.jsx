@@ -63,10 +63,10 @@ const Home = (props) => {
         <Container className='home-container-right'>
           {loadingScean ? (
             <div>
-              <Spline
+              {/* <Spline
                 className='main-animation-spline'
                 scene='https://prod.spline.design/WD9OeVV3mdZrCo5F/scene.splinecode'
-              />
+              /> */}
             </div>
           ) : (
             <div className='w-75 d-flex justify-content-center align-items-center'>
