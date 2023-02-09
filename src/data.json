@@ -1,67 +1,17 @@
 [
   {
-    "title": "Weather App",
-    "image": "https://cdn.pixabay.com/photo/2023/01/08/18/42/road-7705906_640.jpg",
-    "technology": "ReactJS"
+    "title": "Flight Booking App",
+    "image": "http://localhost:3000/capstone-pr.jpg",
+    "tec": "MERN"
   },
   {
-    "title": "E-commerce Website",
-    "image": "https://cdn.pixabay.com/photo/2022/12/12/17/05/elephants-7651446_640.jpg",
-    "technology": "NodeJS"
+    "title": "LinkedIn Clone",
+    "image": "http://localhost:3000/linkedin.png",
+    "tec": "MERN"
   },
   {
-    "title": "Blog Platform",
-    "image": "https://cdn.pixabay.com/photo/2023/01/10/21/31/trees-7710539__340.jpg",
-    "technology": "Django"
-  },
-  {
-    "title": "Social Media App",
-    "image": "https://cdn.pixabay.com/photo/2023/01/06/13/33/palace-7701252__340.jpg",
-    "technology": "Flutter"
-  },
-  {
-    "title": "Task Manager",
-    "image": "https://cdn.pixabay.com/photo/2023/01/14/13/01/car-7718136__340.jpg",
-    "technology": "VueJS"
-  },
-  {
-    "title": "Online Marketplace",
-    "image": "https://cdn.pixabay.com/photo/2022/07/11/10/42/boho-style-7314646_640.png",
-    "technology": "Ruby on Rails"
-  },
-  {
-    "title": "Food Delivery App",
-    "image": "https://cdn.pixabay.com/photo/2022/10/11/12/38/french-bulldog-7514203__340.jpg",
-    "technology": "React Native"
-  },
-  {
-    "title": "Fitness Tracker",
-    "image": "https://cdn.pixabay.com/photo/2022/08/19/13/40/leaves-7396970__340.jpg",
-    "technology": "Ionic"
-  },
-  {
-    "title": "Real Estate Website",
-    "image": "https://cdn.pixabay.com/photo/2022/10/29/19/21/golden-eagle-7555959__340.jpg",
-    "technology": "Laravel"
-  },
-  {
-    "title": "Music Streaming Service",
-    "image": "https://cdn.pixabay.com/photo/2023/01/14/13/17/bellflower-7718193__340.jpg",
-    "technology": "ExpressJS"
-  },
-  {
-    "title": "Fitness Tracker",
-    "image": "https://cdn.pixabay.com/photo/2022/08/19/13/40/leaves-7396970__340.jpg",
-    "technology": "Ionic"
-  },
-  {
-    "title": "Real Estate Website",
-    "image": "https://cdn.pixabay.com/photo/2022/10/29/19/21/golden-eagle-7555959__340.jpg",
-    "technology": "Laravel"
-  },
-  {
-    "title": "Music Streaming Service",
-    "image": "https://cdn.pixabay.com/photo/2023/01/14/13/17/bellflower-7718193__340.jpg",
-    "technology": "ExpressJS"
+    "title": "Whatapp Clone ()",
+    "image": "http://localhost:3000/whatsapp.jpg",
+    "tec": "Front-End"
   }
 ]

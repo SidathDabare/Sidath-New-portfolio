@@ -39,8 +39,8 @@ function App() {
             <MyNavbar />
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/work' element={<Work />} />
-              <Route path='/work1' element={<Work1 />} />
+              {/* <Route path='/work' element={<Work />} /> */}
+              <Route path='/work' element={<Work1 />} />
               <Route path='/about' element={<About />} />
               <Route path='/works/:name' element={<WorkDisplay />} />
               <Route path='/profile' element={<Profile />} />

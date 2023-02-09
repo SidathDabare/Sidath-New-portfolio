@@ -156,7 +156,7 @@ const MyNavbar = (props) => {
                   toggleBtn ? "nav-menu-links" : "nav-menu-links-reverse"
                 }
                 onClick={() => {
-                  navigate("/work1")
+                  navigate("/work")
                   setToggleBtn(false)
                 }}>
                 WORK

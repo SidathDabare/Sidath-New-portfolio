@@ -23,9 +23,7 @@ const Work1 = () => {
               <img className='work1-image' src={item.image} alt='' />
               <div className='work1-page-content-text'>
                 <h2 className='work1-page-content-h2'>{item.title}</h2>
-                <small className='work1-page-content-small'>
-                  {item.technology}
-                </small>
+                <small className='work1-page-content-small'>{item.tec}</small>
               </div>
               <div className='work1-page-content-overlay'></div>
             </div>
