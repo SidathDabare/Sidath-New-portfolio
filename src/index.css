@@ -19,7 +19,8 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   min-height: 100vh;
-  width: calc(100% - 6px);
+  /* width: calc(100% - 6px); */
+  width: 100%;
   min-width: 100%;
   max-width: 100%;
   overflow-x: hidden;
