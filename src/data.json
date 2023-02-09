@@ -2,16 +2,19 @@
   {
     "title": "Flight Booking App",
     "image": "http://localhost:3000/capstone-pr.jpg",
-    "tec": "MERN"
+    "tec": "Full-stck MERN",
+    "link": "https://air-tickerting-fe-xc2q.vercel.app"
   },
   {
     "title": "LinkedIn Clone",
-    "image": "http://localhost:3000/linkedin.png",
-    "tec": "MERN"
+    "image": "http://localhost:3000/linkedin.jpg",
+    "tec": "Full-stck MERN",
+    "link": "https://linked-in-fe-woad.vercel.app"
   },
   {
-    "title": "Whatapp Clone ()",
+    "title": "Whatapp Clone",
     "image": "http://localhost:3000/whatsapp.jpg",
-    "tec": "Front-End"
+    "tec": "Front-End",
+    "link": "https://whatsapp-clone-fe-new-v.vercel.app"
   }
 ]

@@ -10,12 +10,12 @@
   justify-content: center;
   margin: auto;
 }
-.temp-text {
+/* .temp-text {
   width: 100%;
   height: auto;
   margin-top: 120px;
   text-align: center;
-}
+} */
 .temp-text h3 {
   padding: 10px 0;
 }
@@ -25,8 +25,8 @@
   flex-wrap: wrap;
   width: 100%;
   height: 70vh;
-  /* margin-top: 170px; */
-  background-color: rgb(106, 109, 109);
+  margin-top: 170px;
+  background-color: rgba(106, 109, 109, 0);
   overflow-x: hidden;
   overflow-y: auto !important;
 }
@@ -44,19 +44,17 @@
   position: relative;
   height: 280px;
   width: 100%;
-  background-color: rgb(34, 97, 97);
   overflow: hidden;
   cursor: pointer;
 }
 .work1-image {
   width: auto;
+  min-width: 100%;
   max-width: 100%;
   height: 100%;
   min-height: 100%;
-  background-size: cover;
+  object-fit: cover;
   transition: 0.5s ease-in-out;
-  margin-left: auto;
-  margin-right: auto;
 }
 .work1-page-content-text {
   cursor: pointer;
@@ -83,12 +81,25 @@
   bottom: -50px;
   transition: 0.5s ease-in-out;
 }
+.work1-page-content-small-link {
+  position: absolute;
+  bottom: -50px;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+.work1-page-content-small-link:hover {
+  color: rgb(61, 216, 216);
+}
+.work1-page-content-small-link span:nth-child(1) svg {
+  font-size: 18px;
+}
 .work1-page-content-item:hover > .work1-image {
   scale: 1.2;
   transition: 0.5s ease-in-out;
 }
 .work1-page-content-item:hover > .work1-page-content-text {
-  background-color: #15151591;
+  background-color: #151515be;
 }
 .work1-page-content-item:hover .work1-page-content-h2 {
   bottom: 100px !important;
@@ -98,4 +109,9 @@
   bottom: 80px !important;
   transition: 0.6s ease-in-out;
   transition-delay: 100ms;
+}
+.work1-page-content-item:hover .work1-page-content-small-link {
+  bottom: 50px !important;
+  transition: 0.6s ease-in-out;
+  transition-delay: 200ms;
 }
