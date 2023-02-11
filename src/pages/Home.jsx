@@ -54,7 +54,7 @@ const Home = (props) => {
                     strings: [
                       "Hey! I am Sidath Dabare.",
                       "I'm a full stack developer",
-                      "I'm based in Padova/Italy",
+                      "I'm base in Padova/Italy",
                     ],
                     autoStart: true,
                     loop: true,
