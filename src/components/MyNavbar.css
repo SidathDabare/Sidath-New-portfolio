@@ -139,6 +139,7 @@
 }
 .switch-colors {
   margin-right: 20px;
+  background-color: #03f8f800;
 }
 .switch-colors > small {
   font-style: italic;

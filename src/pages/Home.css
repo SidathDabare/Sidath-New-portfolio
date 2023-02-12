@@ -9,12 +9,16 @@
 } */
 .home-container {
   position: relative;
+  background-image: url("/public/desktop-bg.png") !important;
+  background-size: cover;
   width: 100%;
   max-width: 100%;
   height: 100vh;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
 }
 .home-container-left {
   position: absolute;
@@ -33,24 +37,66 @@
   max-width: 100%;
   height: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
+.container-image-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.section1-content p {
+.image-item {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  transition: 1s ease-in-out;
+}
+
+.image-item-pic-01 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: -200px;
+  left: 30px;
+}
+.image-item-pic-02 {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -100px;
+}
+.image-item-pic-03 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+}
+.image-item-pic-04 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 100px;
+}
+.section1-content p:nth-child(1) {
   font-size: 55px;
   font-family: "League Gothic", sans-serif;
   margin-bottom: 0;
+  opacity: 0;
 }
-.section1-content div {
+.section1-content p:nth-child(2) {
   font-size: 85px;
   font-family: "League Gothic", sans-serif;
   margin-bottom: 0;
+  opacity: 0;
 }
 @media only screen and (max-width: 1150px) {
-  .home-container-right {
+  /* .home-container-right {
     right: -20%;
-  }
+  } */
   /* .main-animation-spline {
     max-height: 400px;
     max-width: 400px;
@@ -58,8 +104,8 @@
   .add-bg-dark {
     background: linear-gradient(
       45deg,
-      rgb(20, 22, 22) 0%,
-      rgba(24, 28, 29, 0.723) 22%,
+      hsl(222, 11%, 18%) 0%,
+      hsl(222, 11%, 18%) 22%,
       rgba(0, 165, 196, 0) 65%,
       rgba(0, 212, 255, 0) 88%
     );
@@ -88,11 +134,11 @@
     max-width: 100%;
     width: 100%;
   }
-  .section1-content p {
-    font-size: 45px;
+  .section1-content p:nth-child(1) {
+    font-size: 25px;
     text-align: center;
   }
-  .section1-content div {
+  .section1-content p:nth-child(2) {
     font-size: 45px;
     text-align: center;
   }
