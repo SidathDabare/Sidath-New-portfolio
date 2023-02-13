@@ -35,7 +35,7 @@
   height: 154.03px;
   right: 270px;
   top: 53.79px;
-  background: #16a5d3;
+  background: #16a4d3b1;
   box-shadow: -20px 4px 50px rgba(0, 0, 0, 0.25);
   transform: rotate(-45deg);
   z-index: 0;
@@ -46,7 +46,7 @@
   height: 94.92px;
   right: 370px;
   top: 413.52px;
-  background: #0dbbb3;
+  background: #0dbbb2a7;
   transform: rotate(-45deg);
   z-index: 1;
 }
@@ -94,9 +94,10 @@
   height: 84.53px;
   right: 200px;
   top: 393.41px;
-  background: #8b03ba;
+  background: #0d7b8a8a;
   box-shadow: -20px 4px 50px 10px rgba(0, 0, 0, 0.25);
   transform: rotate(-45deg);
+  z-index: 0;
 }
 .div9 {
   position: absolute;
@@ -135,10 +136,10 @@
   height: 250.14px;
   right: 100px;
   top: 223.9px;
-  background: #08059d9e;
+  background: #7f059de2;
   box-shadow: -20px 4px 50px 10px rgba(0, 0, 0, 0.25);
   transform: rotate(-45deg);
-  z-index: -1;
+  z-index: -2;
 }
 /* .div12 {
   position: absolute;
