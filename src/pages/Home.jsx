@@ -61,9 +61,22 @@ const Home = (props) => {
     //   setLoadingScean(true)
     // }, 1500)
     console.log(div1Ref)
-    // gsap.to(".div-animation", {
-    //   transformOrigin: "center-top",
-    // })
+    gsap.to(".div-animation", {
+      keyframes: {
+        y: [0, 80, -10, 30, 0],
+        ease: "none",
+        easeEach: "elastic.easeInOut",
+      },
+      ease: "elastic.easeInOut",
+      duration: "5",
+      stagger: "0.2",
+      // borderRadius: 100,
+      // duration: 1,
+      // x: -20,
+      // y: -20,
+      // ease: "bounce",
+      // stagger: 0.2,
+    })
   }, [props, style])
   // const image1 = document.querySelector(".div1")
   // const image2 = document.querySelector(".div2")
@@ -85,22 +98,6 @@ const Home = (props) => {
       transform: `translate(${x / sSlow}%,${y / sSlow}%) rotate(-45deg)`,
       transition: "0.3s ease-in-out",
       // transitionDelay: "100ms",
-    })
-    gsap.to(".div-animation", {
-      keyframes: {
-        y: [0, 80, -10, 30, 0],
-        ease: "none",
-        easeEach: "elastic.easeInOut",
-      },
-      ease: "elastic.easeInOut",
-      duration: "5",
-      stagger: "0.2",
-      // borderRadius: 100,
-      // duration: 1,
-      // x: -20,
-      // y: -20,
-      // ease: "bounce",
-      // stagger: 0.2,
     })
   }
 
