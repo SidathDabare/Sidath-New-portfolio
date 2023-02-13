@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 
 import { useEffect } from "react"
 import "./Home.css"
@@ -10,17 +10,24 @@ import { useSelector } from "react-redux"
 import Spline from "@splinetool/react-spline"
 import Spinner from "react-bootstrap/Spinner"
 import Typewriter from "typewriter-effect"
-// import ImageRedux from "../Images/image-01.png"
-// import ImageJs from "../Images/image-02.png"
+import ImagePurple from "../Images/dot-purple.png"
+import ImageBlue from "../Images/dot-blue.png"
 // import ImageReact from "../Images/image-03.png"
 // import ImageMongo from "../Images/image-04.png"
-import MovingBg from "../components/MovingBg"
+// import MovingBg from "../components/MovingBg"
+import gsap from "gsap"
 
 const Home = (props) => {
   const themeColor = useSelector((state) => state.setColor.selectedColor)
-  console.log(themeColor)
+  // console.log(themeColor)
   const [loadingScean, setLoadingScean] = useState(true)
+
+  const div1Ref = useRef()
+  const div2Ref = useRef()
   const [style, setStyle] = useState({
+    transform: "rotate(-45deg)",
+  })
+  const [styleSlow, setStyleSlow] = useState({
     transform: "rotate(-45deg)",
   })
 
@@ -53,41 +60,53 @@ const Home = (props) => {
     // setTimeout(() => {
     //   setLoadingScean(true)
     // }, 1500)
-  }, [props])
+    console.log(div1Ref)
+    // gsap.to(".div-animation", {
+    //   transformOrigin: "center-top",
+    // })
+  }, [props, style])
   // const image1 = document.querySelector(".div1")
   // const image2 = document.querySelector(".div2")
   // const image3 = document.querySelector(".div3")
   // const image4 = document.querySelector(".image-item-pic-04")
   // console.log(image1)
 
-  const sFront = 10
+  const sFast = 50
+  const sSlow = 100
   const mouseMove = (e) => {
     const x = e.clientX
     const y = e.clientY
-    setStyle({ transform: `translate(${x / sFront}%,${y / sFront}%)` })
-
-    // if (
-    //   image1 !== null &&
-    //   image2 !== null &&
-    //   image3 !== null &&
-    //   image4 !== null
-    // ) {
-    //   image1.setStyle = `
-    //       translate(${x / sFront}%,${y / sFront}%)`
-    //   image2.style.transform = `
-    //       translate(${x / sFront}%,${y / sFront}%)`
-    //   image3.style.transform = `
-    //       translate(${x / sFront}%,${y / sFront}%)`
-    //   image4.style.transform = `
-    //       translate(${x / sFront}%,${y / sFront}%)`
-    // } else {
-    //   console.log("Error loading")
-    // }
+    setStyle({
+      transform: `translate(${x / sFast}%,${y / sFast}%) rotate(-45deg)`,
+      transition: "0.5s ease-in-out",
+      // transitionDelay: "50ms",
+    })
+    setStyleSlow({
+      transform: `translate(${x / sSlow}%,${y / sSlow}%) rotate(-45deg)`,
+      transition: "0.3s ease-in-out",
+      // transitionDelay: "100ms",
+    })
+    gsap.to(".div-animation", {
+      keyframes: {
+        y: [0, 80, -10, 30, 0],
+        ease: "none",
+        easeEach: "elastic.easeInOut",
+      },
+      ease: "elastic.easeInOut",
+      duration: "5",
+      stagger: "0.2",
+      // borderRadius: 100,
+      // duration: 1,
+      // x: -20,
+      // y: -20,
+      // ease: "bounce",
+      // stagger: 0.2,
+    })
   }
 
   return (
     <div className={themeColor ? "dark" : "light"}>
-      <div className='home-container' onMouseOver={mouseMove}>
+      <div className='home-container' onMouseMove={mouseMove}>
         <div
           className={
             themeColor
@@ -96,7 +115,7 @@ const Home = (props) => {
           }>
           <Container>
             <div className='section1-content  '>
-              <p className=' text-animation animation-delay-200'>
+              <p className='text-animation animation-delay-200'>
                 Hey! I am Sidath Dabare.
               </p>
               <p className=' text-animation animation-delay-100'>
@@ -121,22 +140,72 @@ const Home = (props) => {
         <Container className='home-container-right'>
           {loadingScean ? (
             <>
-              {/* <div className='movin-bg-div'>
-                <div className='div1' style={style}></div>
-                <div className='div2'></div>
-                <div className='div3'></div>
-                <div className='div4'></div>
-                <div className='div5'></div>
-                <div className='div6'></div>
-                <div className='div7'></div>
-                <div className='div8'></div>
-                <div className='div9'></div>
-                <div className='div10'></div>
-                <div className='div11'></div>
-                <div className='div12'></div>
-                <div className='div13'></div>
-                <div className='div14'></div>
-              </div> */}
+              <div className='movin-bg-div'>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div1'
+                  style={style}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div2'
+                  style={styleSlow}></div>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div3'
+                  style={style}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div4'
+                  style={style}></div>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div5'
+                  style={styleSlow}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div6'
+                  style={style}></div>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div7'
+                  style={styleSlow}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div8'
+                  style={style}></div>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div9'
+                  style={styleSlow}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div10'
+                  style={style}></div>
+                <div
+                  ref={div2Ref}
+                  className='div-animation div14'
+                  style={style}></div>
+                <div
+                  ref={div1Ref}
+                  className='div-animation div11'
+                  style={styleSlow}></div>
+                <div ref={div2Ref} className='div12' style={style}>
+                  <img
+                    src={ImagePurple}
+                    className='div-animation div12-img'
+                    style={style}
+                    alt=''
+                  />
+                </div>
+                <div ref={div1Ref} className='div13' style={styleSlow}>
+                  <img
+                    src={ImageBlue}
+                    className='div-animation div13-img'
+                    alt=''
+                    style={styleSlow}
+                  />
+                </div>
+              </div>
             </>
           ) : (
             // <div className='container-image-right'>

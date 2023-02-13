@@ -9,7 +9,7 @@
 } */
 .home-container {
   position: relative;
-  background-image: url("/public/desktop-bg.png") !important;
+  /* background-image: url("/public/desktop-bg.png") !important; */
   background-size: cover;
   width: 100%;
   max-width: 100%;
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .home-container-left {
   position: absolute;
@@ -142,9 +142,9 @@
     font-size: 45px;
     text-align: center;
   }
-  .home-container-right {
+  /* .home-container-right {
     display: none;
-  }
+  } */
 }
 .text-animation {
   animation: fadeInText 0.7s linear forwards;
