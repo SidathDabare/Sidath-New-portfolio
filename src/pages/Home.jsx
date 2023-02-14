@@ -7,9 +7,9 @@ import "./Home.css"
 import "../../src/components/MovingBg.css"
 import { Container } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import Spline from "@splinetool/react-spline"
+// import Spline from "@splinetool/react-spline"
 import Spinner from "react-bootstrap/Spinner"
-import Typewriter from "typewriter-effect"
+// import Typewriter from "typewriter-effect"
 import ImagePurple from "../Images/dot-purple.png"
 import ImageBlue from "../Images/dot-blue.png"
 // import ImageReact from "../Images/image-03.png"
@@ -31,31 +31,6 @@ const Home = (props) => {
     transform: "rotate(-45deg)",
   })
 
-  // const loadScean = async () => {
-  //   try {
-  //     let response = await fetch(
-  //       `https://prod.spline.design/WD9OeVV3mdZrCo5F/scene.splinecode`
-  //     )
-  //     let data = await response
-  //     if (data.ok) {
-  //       setLoadingScean(true)
-  //     } else {
-  //       setLoadingScean(false)
-  //     }
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  // const parallax = document.querySelector(".home-container")
-
-  // parallax.addEventListener("mousemove", (e) => {
-  //   const x = e.clientX
-  //   const y = e.clientY
-
-  //   image.style.transform = `
-  //       translate(${x / sFront}%,${y / sFront}%)`
-  // })
   useEffect(() => {
     // setTimeout(() => {
     //   setLoadingScean(true)
@@ -63,26 +38,15 @@ const Home = (props) => {
     console.log(div1Ref)
     gsap.to(".div-animation", {
       keyframes: {
-        y: [0, 80, -10, 30, 0],
+        x: [0, 30, -10, 30, 0],
         ease: "none",
-        easeEach: "elastic.easeInOut",
+        easeEach: "elastic.easeIn",
       },
-      ease: "elastic.easeInOut",
+      ease: "elastic.easeIn",
       duration: "5",
       stagger: "0.2",
-      // borderRadius: 100,
-      // duration: 1,
-      // x: -20,
-      // y: -20,
-      // ease: "bounce",
-      // stagger: 0.2,
     })
   }, [props, style])
-  // const image1 = document.querySelector(".div1")
-  // const image2 = document.querySelector(".div2")
-  // const image3 = document.querySelector(".div3")
-  // const image4 = document.querySelector(".image-item-pic-04")
-  // console.log(image1)
 
   const sFast = 50
   const sSlow = 100
