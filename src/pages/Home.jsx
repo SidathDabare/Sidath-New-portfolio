@@ -24,6 +24,7 @@ const Home = (props) => {
 
   const div1Ref = useRef()
   const div2Ref = useRef()
+
   const [style, setStyle] = useState({
     transform: "rotate(-45deg)",
   })
@@ -35,39 +36,39 @@ const Home = (props) => {
     // setTimeout(() => {
     //   setLoadingScean(true)
     // }, 1500)
-    console.log(div1Ref)
-    gsap.to(".div-animation", {
-      keyframes: {
-        x: [0, 30, -10, 30, 0],
-        ease: "none",
-        easeEach: "elastic.easeIn",
-      },
-      ease: "elastic.easeIn",
-      duration: "5",
-      stagger: "0.2",
-    })
+    // console.log(div1Ref)
+    // gsap.to(".div-animation", {
+    //   keyframes: {
+    //     x: [0, 30, -10, 30, 0],
+    //     ease: "none",
+    //     easeEach: "elastic.easeIn",
+    //   },
+    //   ease: "elastic.easeIn",
+    //   duration: "5",
+    //   stagger: "0.2",
+    // })
   }, [props, style])
 
-  const sFast = 50
-  const sSlow = 100
+  const sFast = 20
+  const sSlow = 40
   const mouseMove = (e) => {
     const x = e.clientX
     const y = e.clientY
     setStyle({
       transform: `translate(${x / sFast}%,${y / sFast}%) rotate(-45deg)`,
-      transition: "0.5s ease-in-out",
+      transition: "0.5s ease",
       // transitionDelay: "50ms",
     })
     setStyleSlow({
       transform: `translate(${x / sSlow}%,${y / sSlow}%) rotate(-45deg)`,
-      transition: "0.3s ease-in-out",
+      transition: "0.3s ease",
       // transitionDelay: "100ms",
     })
   }
 
   return (
-    <div className={themeColor ? "dark" : "light"}>
-      <div className='home-container' onMouseMove={mouseMove}>
+    <div className={themeColor ? "dark" : "light"} onMouseMove={mouseMove}>
+      <div className='home-container'>
         <div
           className={
             themeColor
@@ -117,31 +118,31 @@ const Home = (props) => {
                 <div
                   ref={div2Ref}
                   className='div-animation div4'
-                  style={style}></div>
+                  style={styleSlow}></div>
                 <div
                   ref={div1Ref}
                   className='div-animation div5'
-                  style={styleSlow}></div>
+                  style={style}></div>
                 <div
                   ref={div2Ref}
                   className='div-animation div6'
-                  style={style}></div>
+                  style={styleSlow}></div>
                 <div
                   ref={div1Ref}
                   className='div-animation div7'
-                  style={styleSlow}></div>
+                  style={style}></div>
                 <div
                   ref={div2Ref}
                   className='div-animation div8'
-                  style={style}></div>
+                  style={styleSlow}></div>
                 <div
                   ref={div1Ref}
                   className='div-animation div9'
-                  style={styleSlow}></div>
+                  style={style}></div>
                 <div
                   ref={div2Ref}
                   className='div-animation div10'
-                  style={style}></div>
+                  style={styleSlow}></div>
                 <div
                   ref={div2Ref}
                   className='div-animation div14'
