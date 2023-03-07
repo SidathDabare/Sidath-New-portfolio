@@ -7,17 +7,22 @@ import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import MyNavbar from "./components/MyNavbar"
 import Preloader from "./components/Preloader"
-import Work from "./pages/Work"
+// import Work from "./pages/Work"
 import { useSelector } from "react-redux"
 import WorkDisplay from "./pages/WorkDisplay"
 import Contact from "./pages/Contact"
 import About from "./pages/About"
 import CustomCursor from "./components/CustomCursor"
 import Work1 from "./pages/Work1"
+import ReactGA from "react-ga4"
 
 // export const ThemeContext = createContext(null)
 
 function App() {
+  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS)
+  ReactGA.pageview(document.location.pathname)
+  // ReactGA.send({ hitType: "pageview", page: "/" })
+
   const themeColor = useSelector((state) => state.setColor.selectedColor)
 
   // const [theme, setTheme] = useState(false)
