@@ -14,13 +14,13 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import CustomCursor from "./components/CustomCursor"
 import Work1 from "./pages/Work1"
-import ReactGA from "react-ga4"
+// import ReactGA from "react-ga4"
 
 // export const ThemeContext = createContext(null)
 
 function App() {
-  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS)
-  ReactGA.pageview(document.location.pathname)
+  // ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS)
+  // ReactGA.pageview(document.location.pathname)
   // ReactGA.send({ hitType: "pageview", page: "/" })
 
   const themeColor = useSelector((state) => state.setColor.selectedColor)
