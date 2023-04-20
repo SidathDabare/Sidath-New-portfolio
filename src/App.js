@@ -14,6 +14,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import CustomCursor from "./components/CustomCursor"
 import Work1 from "./pages/Work1"
+import { Analytics } from "@vercel/analytics/react"
 // import ReactGA from "react-ga4"
 
 // export const ThemeContext = createContext(null)
@@ -54,6 +55,7 @@ function App() {
           </BrowserRouter>
         </div>
       )}
+      <Analytics />
     </>
   )
 }
