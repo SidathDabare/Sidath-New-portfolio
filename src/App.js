@@ -55,7 +55,12 @@ function App() {
           </BrowserRouter>
         </div>
       )}
-      <Analytics />
+      <Analytics
+        beforeSend={(e) => {
+          if (e.url.includes("private")) return null
+          return e
+        }}
+      />
     </>
   )
 }
