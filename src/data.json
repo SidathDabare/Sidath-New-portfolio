@@ -1,5 +1,18 @@
 [
   {
+    "title": "Rest Countries API",
+    "image": "https://sidathdabare.vercel.app/rest-countries.jpg",
+    "tec": "React / Redux / Bootstrap",
+    "link": "https://sidathdabare.github.io/rest-countries"
+  },
+
+  {
+    "title": "Multi Step Form",
+    "image": "https://sidathdabare.vercel.app/multi-step-form.jpg",
+    "tec": "React",
+    "link": "https://sidathdabare.github.io/multi-step-form"
+  },
+  {
     "title": "Flight Booking App",
     "image": "https://sidathdabare.vercel.app/capstone-pr.jpg",
     "tec": "Full-stack MERN",
@@ -9,7 +22,7 @@
   {
     "title": "Whatapp Clone",
     "image": "https://sidathdabare.vercel.app/whatsapp.jpg",
-    "tec": "Front-End",
+    "tec": "React / Redux / Bootstrap",
     "link": "https://whatsapp-clone-fe-new-v.vercel.app"
   }
 ]
