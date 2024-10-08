@@ -6,7 +6,7 @@ import MyPic from "../Images/my-pic.png";
 import "./About.css";
 
 const RESUME_PDF_ENG = process.env.REACT_APP_CLIENT_URL_ENG;
-const RESUME_PDF_ITA = process.env.REACT_APP_CLIENT_URL_ENG;
+const RESUME_PDF_ITA = process.env.REACT_APP_CLIENT_URL_ITA;
 
 const About = () => {
   const themeColor = useSelector((state) => state.setColor.selectedColor);
