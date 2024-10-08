@@ -1,43 +1,44 @@
 /** @format */
 
-import React from "react"
-import { useSelector } from "react-redux"
-import MyPic from "../Images/my-pic.png"
-import "./About.css"
+import React from "react";
+import { useSelector } from "react-redux";
+import MyPic from "../Images/my-pic.png";
+import "./About.css";
 
-const RESUME_PDF = process.env.REACT_APP_CLIENT_URL
+const RESUME_PDF_ENG = process.env.REACT_APP_CLIENT_URL_ENG;
+const RESUME_PDF_ITA = process.env.REACT_APP_CLIENT_URL_ENG;
 
 const About = () => {
-  const themeColor = useSelector((state) => state.setColor.selectedColor)
+  const themeColor = useSelector((state) => state.setColor.selectedColor);
 
   const downloadFile = (url) => {
-    const fileName = url.split("/").pop()
-    const aTag = document.createElement("a")
-    aTag.href = url
-    aTag.setAttribute("download", fileName)
-    document.body.appendChild(aTag)
-    aTag.click()
-    aTag.remove()
-  }
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
 
   return (
     <div className={themeColor ? "dark" : "light"}>
-      <div className='about-div'>
-        <div className='about-content-div'>
-          <div className='about-content-left'>
+      <div className="about-div">
+        <div className="about-content-div">
+          <div className="about-content-left">
             <img
               src={MyPic}
-              className='my-pic text-animation animation-delay-300'
-              alt='my-pic'
+              className="my-pic text-animation animation-delay-300"
+              alt="my-pic"
             />
           </div>
-          <div className='about-content-right'>
-            <div className='about-top-div text-animation'>
+          <div className="about-content-right">
+            <div className="about-top-div text-animation">
               <h1>ABOUT</h1>
             </div>
-            <div className='about-top-bottom'>
-              <div className='about-section01'>
-                <p className='text-animation animation-delay-100 pt-2'>
+            <div className="about-top-bottom">
+              <div className="about-section01">
+                <p className="text-animation animation-delay-100 pt-2">
                   Hi!,I am Sidath Dabare, a driven and enthusiastic junior full
                   stack developer based in Padova, Italy. With a strong passion
                   for technology, I am committed to delivering top-quality web
@@ -49,17 +50,32 @@ const About = () => {
                   solutions and bringing my ideas to life.
                 </p>
               </div>
-              <div className='about-section02'>
+              <div className="about-section02">
                 <p
-                  className='resume text-animation animation-delay-200 pt-2 font-weight-bold'
-                  onClick={() => downloadFile(RESUME_PDF)}>
-                  <span className='font-weight-bold'>RESUME</span>
+                  className="resume text-animation animation-delay-200 pt-2 font-weight-bold"
+                  onClick={() => downloadFile(RESUME_PDF_ENG)}
+                >
+                  <span className="font-weight-bold">RESUME ENG</span>
                   <span
                     className={
                       !themeColor
                         ? "bottom-line dark mt-1"
                         : "bottom-line light mt-1"
-                    }></span>
+                    }
+                  ></span>
+                </p>
+                <p
+                  className="resume text-animation animation-delay-200 pt-2 font-weight-bold"
+                  onClick={() => downloadFile(RESUME_PDF_ITA)}
+                >
+                  <span className="font-weight-bold">RESUME ITA</span>
+                  <span
+                    className={
+                      !themeColor
+                        ? "bottom-line dark mt-1"
+                        : "bottom-line light mt-1"
+                    }
+                  ></span>
                 </p>
               </div>
             </div>
@@ -67,7 +83,7 @@ const About = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
